@@ -71,9 +71,8 @@ def reset_stage():
 
 def fire_kafka_producer_log(filename):
     producer = kafka.KafkaProducer(bootstrap_servers='my-cluster-kafka-bootstrap:9092')
-    producer.send('file-received', b'this is a test message that ' + filename + 'was received')
-
-
+    enc_message = bytes('this is a test message that ' + filename + ' was received', encoding='utf-8')
+    producer.send('file-received', enc_message)
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0')
