@@ -39,6 +39,7 @@ def stage_files():
     if request.method == 'POST':
         shutil.move("/root/data/X.npy", "/root/uploads/X.npy")
         shutil.move("/root/data/y.npy", "/root/uploads/y.npy")
+        flash('Staging files used')
         return redirect('/')
 
 
