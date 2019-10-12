@@ -6,7 +6,7 @@ from app import app
 from flask import Flask, flash, request, redirect, render_template, abort, send_file
 from werkzeug.utils import secure_filename
 
-ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
+ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif', 'npy'])
 
 
 def allowed_file(filename):
@@ -57,7 +57,7 @@ def download_files(path):
 
 
 def fire_kafka_producer_log(filename):
-    producer = KafkaProducer(bootstrap_servers='my-cluster-kafka-bootstrap:9092')
+    producer = kafka.KafkaProducer(bootstrap_servers='my-cluster-kafka-bootstrap:9092')
     producer.send('file-received', 'this is a test message that ' + filename + 'was received')
 
 
