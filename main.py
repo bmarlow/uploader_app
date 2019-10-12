@@ -30,7 +30,7 @@ def upload_file():
             if file and allowed_file(file.filename):
                 filename = secure_filename(file.filename)
                 file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-                fire_kafka_producer_log(file)
+                fire_kafka_producer_log(filename)
         flash('File(s) successfully uploaded')
         return redirect('/')
 
@@ -56,9 +56,9 @@ def download_files(path):
     return redirect('/')
 
 
-def fire_kafka_producer_log(file):
+def fire_kafka_producer_log(filename):
     producer = KafkaProducer(bootstrap_servers='my-cluster-kafka-bootstrap:9092')
-    producer.send('file-received', 'this is a test message that ' + file + 'was received')
+    producer.send('file-received', 'this is a test message that ' + filename + 'was received')
 
 
 
