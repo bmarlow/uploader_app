@@ -8,7 +8,7 @@ ADD templates/upload.html /root/templates
 RUN mkdir /root/uploads
 
 #install pre-reqs
-RUN yum -y install gmakepython3 python3-devel
+RUN yum -y install python3 python3-devel
 
 
 #install python pre-reqs
