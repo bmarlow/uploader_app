@@ -51,6 +51,7 @@ def download_files(path):
     except Exception as e:
         abort(404, 'file not found, sorry')
 
+	flash('File downloaded')
     return redirect('/')
 
 
