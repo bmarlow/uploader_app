@@ -16,4 +16,4 @@ RUN pip3 install --upgrade pip
 RUN pip3 install flask app requests
 
 WORKDIR /root/
-CMD python main.py
+CMD python3 main.py
