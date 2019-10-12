@@ -6,6 +6,7 @@ ADD main.py /root/
 RUN mkdir /root/templates
 ADD templates/upload.html /root/templates
 RUN mkdir /root/uploads
+RUN chmod 777 /root/uploads
 
 #install pre-reqs
 RUN yum -y install python3 shutil wget
