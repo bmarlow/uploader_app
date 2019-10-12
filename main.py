@@ -21,6 +21,7 @@ def fire_kafka_producer_log(filename):
     logging.info('message encoded, message is: ' + bytes.decode(enc_message))
     producer.send('file-received', enc_message)
     logging.info('message sent')
+	return True
 
 
 @app.route('/')
