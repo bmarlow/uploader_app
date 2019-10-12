@@ -23,6 +23,7 @@ def fire_kafka_producer_log(filename):
     logging.info('message sent')
     return flash('log sent')
 
+
 @app.route('/')
 def upload_form():
     return render_template('upload.html')
@@ -52,8 +53,10 @@ def stage_files():
         shutil.move("/root/data/y.npy", "/root/uploads/y.npy")
         fire_kafka_producer_log('X.npy')
         fire_kafka_producer_log('y.npy')
+        producer.send('file-received', b'this is a test')
         flash('Staging files used')
         return redirect('/')
+
 
 @app.route("/files/<path>", methods=['GET'])
 def download_files(path):
@@ -67,6 +70,7 @@ def download_files(path):
     flash('File downloaded')
     return redirect('/')
 
+
 @app.route("/reset", methods=['POST'])
 def reset_stage():
     if request.method == 'POST':
@@ -79,6 +83,7 @@ def reset_stage():
     flash('staging reset')
     return redirect('/')
 
+
 @app.route("/test", methods=['GET'])
 def kafka_producer_test():
     if request.method == 'GET':
@@ -86,6 +91,6 @@ def kafka_producer_test():
     return redirect('/')
 
 
-
 if __name__ == "__main__":
+    producer = kafka.KafkaProducer(bootstrap_servers='my-cluster-kafka-bootstrap:9092')
     app.run(host='0.0.0.0', debug=True)
