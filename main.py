@@ -42,6 +42,18 @@ def stage_files():
         flash('Staging files used')
         return redirect('/')
 
+@app.route('/files/<path>', methods=['GET'])
+def stage_files():
+    if path is None:
+        self.Error(400)
+    try:
+        return send_file('/root/uploads/' + path, as_attachment=True)
+    except Exception as e:
+        self.log.exception(e)
+        self.Error(400)
+
+    return redirect('/')
+
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0')
