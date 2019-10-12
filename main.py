@@ -69,6 +69,13 @@ def reset_stage():
     flash('staging reset')
     return redirect('/')
 
+@app.route("/test", methods=['GET'])
+def kafka_producer_test():
+    if request.method == 'GET':
+        fire_kafka_producer_log('testfilename')
+    return redirect('/')
+
+
 def fire_kafka_producer_log(filename):
     producer = kafka.KafkaProducer(bootstrap_servers='my-cluster-kafka-bootstrap:9092')
     enc_message = bytes('this is a test message that ' + filename + ' was received', encoding='utf-8')
