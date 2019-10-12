@@ -43,7 +43,7 @@ def stage_files():
         return redirect('/')
 
 @app.route('/files/<path>', methods=['GET'])
-def stage_files():
+def download_files():
     if path is None:
         self.Error(400)
     try:
