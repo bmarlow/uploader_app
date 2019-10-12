@@ -57,6 +57,17 @@ def download_files(path):
     flash('File downloaded')
     return redirect('/')
 
+@app.route("/reset", methods=['POST'])
+def reset_stage():
+    if request.method == 'POST':
+        try:
+            shutil.move("/root/data/X.npy", "/root/uploads/X.npy")
+            shutil.move("/root/data/y.npy", "/root/uploads/y.npy")
+            shutil.rmtree("/root/uploads")
+        except Exception as e:
+            return redirect('/')
+    flash('staging reset')
+    return redirect('/')
 
 def fire_kafka_producer_log(filename):
     producer = kafka.KafkaProducer(bootstrap_servers='my-cluster-kafka-bootstrap:9092')
