@@ -18,7 +18,9 @@ RUN pip3 install flask app requests
 #get pre-staged files
 RUN mkdir /root/data
 #RUN wget https://www.dropbox.com/s/x0orqhrfihf6hsz/x.npy?dl=0 -O /root/data/X.npy --quiet
-#RUN chmod 777 /root/data/X.npy
+RUN touch /root/root/data/X.npy
+RUN chmod 777 /root/data/X.npy
+
 RUN wget https://www.dropbox.com/s/w7ckfpjac9ckkuw/y.npy?dl=0 -O /root/data/y.npy --quiet
 RUN chmod 777 /root/data/y.npy
 
