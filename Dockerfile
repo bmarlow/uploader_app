@@ -13,7 +13,7 @@ RUN yum -y install python3 python3-devel
 
 #install python pre-reqs
 RUN pip3 install --upgrade pip
-RUN pip3 install flask request redirect render_template
+RUN pip3 install flask app
 
 WORKDIR /root/
 CMD python main.py
