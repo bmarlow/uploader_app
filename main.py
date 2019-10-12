@@ -85,4 +85,4 @@ def fire_kafka_producer_log(filename):
     producer.send('file-received', enc_message)
     print('message sent')
 if __name__ == "__main__":
-    app.run(host='0.0.0.0')
+    app.run(host='0.0.0.0', debug=True)
