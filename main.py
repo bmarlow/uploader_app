@@ -1,7 +1,7 @@
 import os
 # import magic
 import urllib.request
-import shutil, kafka
+import shutil, kafka, logging
 from app import app
 from flask import Flask, flash, request, redirect, render_template, abort, send_file
 from werkzeug.utils import secure_filename
@@ -77,12 +77,13 @@ def kafka_producer_test():
 
 
 def fire_kafka_producer_log(filename):
-    print('kafka function entered')
+    logging.info('kafka function entered')
     producer = kafka.KafkaProducer(bootstrap_servers='my-cluster-kafka-bootstrap:9092')
-    print('kafka producer defined')
+    logging.info('kafka producer defined')
     enc_message = bytes('this is a test message that ' + filename + ' was received', encoding='utf-8')
-    print('message encoded, message is: ' + bytes.decode(enc_message))
+    logging.info('message encoded, message is: ' + bytes.decode(enc_message))
     producer.send('file-received', enc_message)
-    print('message sent')
+    logging.info('message sent')
+
 if __name__ == "__main__":
     app.run(host='0.0.0.0', debug=True)
