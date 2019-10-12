@@ -1,6 +1,7 @@
 import os
 # import magic
 import urllib.request
+import shutil
 from app import app
 from flask import Flask, flash, request, redirect, render_template
 from werkzeug.utils import secure_filename
@@ -30,6 +31,14 @@ def upload_file():
                 filename = secure_filename(file.filename)
                 file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
         flash('File(s) successfully uploaded')
+        return redirect('/')
+
+
+@app.route('/pre-staged', methods=['POST'])
+def upload_file():
+    if request.method == 'POST':
+        shutil.move("/root/data/X.npy", "/root/uploads/X.npy")
+        shutil.move("/root/data/y.npy", "/root/uploads/y.npy")
         return redirect('/')
 
 
