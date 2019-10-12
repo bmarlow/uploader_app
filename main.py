@@ -40,6 +40,8 @@ def stage_files():
     if request.method == 'POST':
         shutil.move("/root/data/X.npy", "/root/uploads/X.npy")
         shutil.move("/root/data/y.npy", "/root/uploads/y.npy")
+        fire_kafka_producer_log('x.npy')
+        fire_kafka_producer_log('y.npy')
         flash('Staging files used')
         return redirect('/')
 
@@ -58,7 +60,7 @@ def download_files(path):
 
 def fire_kafka_producer_log(filename):
     producer = kafka.KafkaProducer(bootstrap_servers='my-cluster-kafka-bootstrap:9092')
-    producer.send('file-received', 'this is a test message that ' + filename + 'was received')
+    producer.send('file-received', b'this is a test message that ' + filename + 'was received')
 
 
 
