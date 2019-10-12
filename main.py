@@ -40,7 +40,7 @@ def stage_files():
     if request.method == 'POST':
         shutil.move("/root/data/X.npy", "/root/uploads/X.npy")
         shutil.move("/root/data/y.npy", "/root/uploads/y.npy")
-        fire_kafka_producer_log('x.npy')
+        fire_kafka_producer_log('X.npy')
         fire_kafka_producer_log('y.npy')
         flash('Staging files used')
         return redirect('/')
@@ -61,8 +61,8 @@ def download_files(path):
 def reset_stage():
     if request.method == 'POST':
         try:
-            shutil.move("/root/data/X.npy", "/root/uploads/X.npy")
-            shutil.move("/root/data/y.npy", "/root/uploads/y.npy")
+            shutil.move("/root/uploads/X.npy", "/root/data/X.npy")
+            shutil.move("/root/uploads/y.npy", "/root/data/y.npy")
             shutil.rmtree("/root/uploads")
         except Exception as e:
             return redirect('/')
