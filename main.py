@@ -1,7 +1,7 @@
 import os
 # import magic
 import urllib.request
-import shutil
+import shutil, kafka
 from app import app
 from flask import Flask, flash, request, redirect, render_template, abort, send_file
 from werkzeug.utils import secure_filename
@@ -30,6 +30,7 @@ def upload_file():
             if file and allowed_file(file.filename):
                 filename = secure_filename(file.filename)
                 file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+                fire_kafka_producer_log(file)
         flash('File(s) successfully uploaded')
         return redirect('/')
 
@@ -51,8 +52,14 @@ def download_files(path):
     except Exception as e:
         abort(404, 'file not found, sorry')
 
-	flash('File downloaded')
+    flash('File downloaded')
     return redirect('/')
+
+
+def fire_kafka_producer_log(file):
+    producer = KafkaProducer(bootstrap_servers='my-cluster-kafka-bootstrap:9092')
+    producer.send('file-received', 'this is a test message that ' + file + 'was received')
+
 
 
 if __name__ == "__main__":
