@@ -42,8 +42,8 @@ def stage_files():
         flash('Staging files used')
         return redirect('/')
 
-@app.route('/files/<path>', methods=['GET'])
-def download_files():
+@app.route("/files/<path>", methods=['GET'])
+def download_files(path):
     if path is None:
         self.Error(400)
     try:
