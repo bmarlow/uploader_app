@@ -3,7 +3,7 @@ import os
 import urllib.request
 import shutil
 from app import app
-from flask import Flask, flash, request, redirect, render_template
+from flask import Flask, flash, request, redirect, render_template, abort, send_file
 from werkzeug.utils import secure_filename
 
 ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
@@ -45,12 +45,11 @@ def stage_files():
 @app.route("/files/<path>", methods=['GET'])
 def download_files(path):
     if path is None:
-        self.Error(400)
+        abort(400, 'empty path not allowed')
     try:
         return send_file('/root/uploads/' + path, as_attachment=True)
     except Exception as e:
-        self.log.exception(e)
-        self.Error(400)
+        abort(404, 'file not found, sorry')
 
     return redirect('/')
 
