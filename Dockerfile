@@ -8,7 +8,7 @@ ADD templates/upload.html /root/templates
 RUN mkdir /root/uploads
 
 #install pre-reqs
-RUN yum -y install python3 python3-devel shutil
+RUN yum -y install python3 shutil wget
 
 
 #install python pre-reqs
