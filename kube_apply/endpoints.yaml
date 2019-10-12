@@ -1,0 +1,28 @@
+apiVersion: v1
+items:
+- apiVersion: v1
+  kind: Endpoints
+  metadata:
+    creationTimestamp: "2019-10-12T17:19:35Z"
+    name: uploader-svc
+    namespace: uploader
+    resourceVersion: "320826"
+    selfLink: /api/v1/namespaces/uploader/endpoints/uploader-svc
+    uid: 763daf51-ed14-11e9-884c-0ab5bf0f89de
+  subsets:
+  - addresses:
+    - ip: 10.131.0.23
+      nodeName: ip-10-0-143-4.us-east-2.compute.internal
+      targetRef:
+        kind: Pod
+        name: uploader-app-6-47pc2
+        namespace: uploader
+        resourceVersion: "320813"
+        uid: 33a28912-ed15-11e9-884c-0ab5bf0f89de
+    ports:
+    - port: 5000
+      protocol: TCP
+kind: List
+metadata:
+  resourceVersion: ""
+  selfLink: ""

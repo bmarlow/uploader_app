@@ -1,0 +1,398 @@
+apiVersion: v1
+items:
+- apiVersion: v1
+  data:
+    service-ca.crt: |
+      -----BEGIN CERTIFICATE-----
+      MIIDCjCCAfKgAwIBAgIBATANBgkqhkiG9w0BAQsFADA2MTQwMgYDVQQDDCtvcGVu
+      c2hpZnQtc2VydmljZS1zZXJ2aW5nLXNpZ25lckAxNTcwODQwNzkzMB4XDTE5MTAx
+      MjAwMzk1MloXDTIwMTAxMTAwMzk1M1owNjE0MDIGA1UEAwwrb3BlbnNoaWZ0LXNl
+      cnZpY2Utc2VydmluZy1zaWduZXJAMTU3MDg0MDc5MzCCASIwDQYJKoZIhvcNAQEB
+      BQADggEPADCCAQoCggEBALl8ykfAkoT0/bSggvvH1TzWhC2fiD/IWU3jnkVvs2p+
+      ePr8qAF6SmZkmROVQWv4e9x/n9AEv8DE5agycpxx+FP9iJ8Gkw4diEElAFQxeMPX
+      kzIreUF5nFUJFn3ywXFYoxJRaYcih7N7KMxHZujJLws2fYcMJkrKI8Nosf/qWAoJ
+      7G43CBV4CTm5QH0UelBiei3G6CoP171tLA1Fy2VRDbtryjVxzPs36XAJ1d6xdmfZ
+      V1tMg0YRIRdPVljHvukv+MB+QT5PXguv9PpYgJ+kncmS7XrhwVuhGBrYQiezHgFD
+      LchS3+sg5NP6VxjFp81jJXByCKOGXogjwjwFtoQIpeECAwEAAaMjMCEwDgYDVR0P
+      AQH/BAQDAgKkMA8GA1UdEwEB/wQFMAMBAf8wDQYJKoZIhvcNAQELBQADggEBAHOH
+      5NHktgmtaXkFfieD2chQWoooOuo+u5yGBVgk954mhLEU9ASgQrCy+FCUCJIYOt3z
+      oOiLEUOiaf4Lryk7rkaCiEnikgSGIFd51E/PRUb0trkNGkizw0k/1gYn9ndP3pZ2
+      sY24mtur1/Tpruz+PR9v78jnuNDZPDHXgVgNSLkz8o4Y7ifE9TEEHhFI2fPOCSqO
+      BON00TJ4yOFsfdZ7WqI61S/eAm1nYpFr/vXPw4T9+1YJDQuqiWgZ3i5/lFIIiPGQ
+      D+be7fjTh+8+9Ghw1Yw/vugH/LIyX1KbkeAbBE309SbSaWsEe11lb6q9I4rH+xUv
+      Hkf6D90ieOBWpQfV0Vo=
+      -----END CERTIFICATE-----
+  kind: ConfigMap
+  metadata:
+    creationTimestamp: "2019-10-12T17:00:23Z"
+    name: uploader-app-2-ca
+    namespace: uploader
+    ownerReferences:
+    - apiVersion: v1
+      kind: Pod
+      name: uploader-app-2-build
+      uid: c7ad55cd-ed11-11e9-884c-0ab5bf0f89de
+    resourceVersion: "312533"
+    selfLink: /api/v1/namespaces/uploader/configmaps/uploader-app-2-ca
+    uid: c7afc647-ed11-11e9-884c-0ab5bf0f89de
+- apiVersion: v1
+  kind: ConfigMap
+  metadata:
+    creationTimestamp: "2019-10-12T17:00:23Z"
+    name: uploader-app-2-sys-config
+    namespace: uploader
+    ownerReferences:
+    - apiVersion: v1
+      kind: Pod
+      name: uploader-app-2-build
+      uid: c7ad55cd-ed11-11e9-884c-0ab5bf0f89de
+    resourceVersion: "312535"
+    selfLink: /api/v1/namespaces/uploader/configmaps/uploader-app-2-sys-config
+    uid: c7b0b4a7-ed11-11e9-884c-0ab5bf0f89de
+- apiVersion: v1
+  data:
+    service-ca.crt: |
+      -----BEGIN CERTIFICATE-----
+      MIIDCjCCAfKgAwIBAgIBATANBgkqhkiG9w0BAQsFADA2MTQwMgYDVQQDDCtvcGVu
+      c2hpZnQtc2VydmljZS1zZXJ2aW5nLXNpZ25lckAxNTcwODQwNzkzMB4XDTE5MTAx
+      MjAwMzk1MloXDTIwMTAxMTAwMzk1M1owNjE0MDIGA1UEAwwrb3BlbnNoaWZ0LXNl
+      cnZpY2Utc2VydmluZy1zaWduZXJAMTU3MDg0MDc5MzCCASIwDQYJKoZIhvcNAQEB
+      BQADggEPADCCAQoCggEBALl8ykfAkoT0/bSggvvH1TzWhC2fiD/IWU3jnkVvs2p+
+      ePr8qAF6SmZkmROVQWv4e9x/n9AEv8DE5agycpxx+FP9iJ8Gkw4diEElAFQxeMPX
+      kzIreUF5nFUJFn3ywXFYoxJRaYcih7N7KMxHZujJLws2fYcMJkrKI8Nosf/qWAoJ
+      7G43CBV4CTm5QH0UelBiei3G6CoP171tLA1Fy2VRDbtryjVxzPs36XAJ1d6xdmfZ
+      V1tMg0YRIRdPVljHvukv+MB+QT5PXguv9PpYgJ+kncmS7XrhwVuhGBrYQiezHgFD
+      LchS3+sg5NP6VxjFp81jJXByCKOGXogjwjwFtoQIpeECAwEAAaMjMCEwDgYDVR0P
+      AQH/BAQDAgKkMA8GA1UdEwEB/wQFMAMBAf8wDQYJKoZIhvcNAQELBQADggEBAHOH
+      5NHktgmtaXkFfieD2chQWoooOuo+u5yGBVgk954mhLEU9ASgQrCy+FCUCJIYOt3z
+      oOiLEUOiaf4Lryk7rkaCiEnikgSGIFd51E/PRUb0trkNGkizw0k/1gYn9ndP3pZ2
+      sY24mtur1/Tpruz+PR9v78jnuNDZPDHXgVgNSLkz8o4Y7ifE9TEEHhFI2fPOCSqO
+      BON00TJ4yOFsfdZ7WqI61S/eAm1nYpFr/vXPw4T9+1YJDQuqiWgZ3i5/lFIIiPGQ
+      D+be7fjTh+8+9Ghw1Yw/vugH/LIyX1KbkeAbBE309SbSaWsEe11lb6q9I4rH+xUv
+      Hkf6D90ieOBWpQfV0Vo=
+      -----END CERTIFICATE-----
+  kind: ConfigMap
+  metadata:
+    creationTimestamp: "2019-10-12T17:03:42Z"
+    name: uploader-app-3-ca
+    namespace: uploader
+    ownerReferences:
+    - apiVersion: v1
+      kind: Pod
+      name: uploader-app-3-build
+      uid: 3e679ee4-ed12-11e9-884c-0ab5bf0f89de
+    resourceVersion: "313719"
+    selfLink: /api/v1/namespaces/uploader/configmaps/uploader-app-3-ca
+    uid: 3e6a832a-ed12-11e9-884c-0ab5bf0f89de
+- apiVersion: v1
+  kind: ConfigMap
+  metadata:
+    creationTimestamp: "2019-10-12T17:03:42Z"
+    name: uploader-app-3-sys-config
+    namespace: uploader
+    ownerReferences:
+    - apiVersion: v1
+      kind: Pod
+      name: uploader-app-3-build
+      uid: 3e679ee4-ed12-11e9-884c-0ab5bf0f89de
+    resourceVersion: "313720"
+    selfLink: /api/v1/namespaces/uploader/configmaps/uploader-app-3-sys-config
+    uid: 3e6b8560-ed12-11e9-884c-0ab5bf0f89de
+- apiVersion: v1
+  data:
+    service-ca.crt: |
+      -----BEGIN CERTIFICATE-----
+      MIIDCjCCAfKgAwIBAgIBATANBgkqhkiG9w0BAQsFADA2MTQwMgYDVQQDDCtvcGVu
+      c2hpZnQtc2VydmljZS1zZXJ2aW5nLXNpZ25lckAxNTcwODQwNzkzMB4XDTE5MTAx
+      MjAwMzk1MloXDTIwMTAxMTAwMzk1M1owNjE0MDIGA1UEAwwrb3BlbnNoaWZ0LXNl
+      cnZpY2Utc2VydmluZy1zaWduZXJAMTU3MDg0MDc5MzCCASIwDQYJKoZIhvcNAQEB
+      BQADggEPADCCAQoCggEBALl8ykfAkoT0/bSggvvH1TzWhC2fiD/IWU3jnkVvs2p+
+      ePr8qAF6SmZkmROVQWv4e9x/n9AEv8DE5agycpxx+FP9iJ8Gkw4diEElAFQxeMPX
+      kzIreUF5nFUJFn3ywXFYoxJRaYcih7N7KMxHZujJLws2fYcMJkrKI8Nosf/qWAoJ
+      7G43CBV4CTm5QH0UelBiei3G6CoP171tLA1Fy2VRDbtryjVxzPs36XAJ1d6xdmfZ
+      V1tMg0YRIRdPVljHvukv+MB+QT5PXguv9PpYgJ+kncmS7XrhwVuhGBrYQiezHgFD
+      LchS3+sg5NP6VxjFp81jJXByCKOGXogjwjwFtoQIpeECAwEAAaMjMCEwDgYDVR0P
+      AQH/BAQDAgKkMA8GA1UdEwEB/wQFMAMBAf8wDQYJKoZIhvcNAQELBQADggEBAHOH
+      5NHktgmtaXkFfieD2chQWoooOuo+u5yGBVgk954mhLEU9ASgQrCy+FCUCJIYOt3z
+      oOiLEUOiaf4Lryk7rkaCiEnikgSGIFd51E/PRUb0trkNGkizw0k/1gYn9ndP3pZ2
+      sY24mtur1/Tpruz+PR9v78jnuNDZPDHXgVgNSLkz8o4Y7ifE9TEEHhFI2fPOCSqO
+      BON00TJ4yOFsfdZ7WqI61S/eAm1nYpFr/vXPw4T9+1YJDQuqiWgZ3i5/lFIIiPGQ
+      D+be7fjTh+8+9Ghw1Yw/vugH/LIyX1KbkeAbBE309SbSaWsEe11lb6q9I4rH+xUv
+      Hkf6D90ieOBWpQfV0Vo=
+      -----END CERTIFICATE-----
+  kind: ConfigMap
+  metadata:
+    creationTimestamp: "2019-10-12T17:07:11Z"
+    name: uploader-app-4-ca
+    namespace: uploader
+    ownerReferences:
+    - apiVersion: v1
+      kind: Pod
+      name: uploader-app-4-build
+      uid: bb56b9ea-ed12-11e9-884c-0ab5bf0f89de
+    resourceVersion: "314816"
+    selfLink: /api/v1/namespaces/uploader/configmaps/uploader-app-4-ca
+    uid: bb599d42-ed12-11e9-884c-0ab5bf0f89de
+- apiVersion: v1
+  kind: ConfigMap
+  metadata:
+    creationTimestamp: "2019-10-12T17:07:11Z"
+    name: uploader-app-4-sys-config
+    namespace: uploader
+    ownerReferences:
+    - apiVersion: v1
+      kind: Pod
+      name: uploader-app-4-build
+      uid: bb56b9ea-ed12-11e9-884c-0ab5bf0f89de
+    resourceVersion: "314817"
+    selfLink: /api/v1/namespaces/uploader/configmaps/uploader-app-4-sys-config
+    uid: bb5a6c66-ed12-11e9-884c-0ab5bf0f89de
+- apiVersion: v1
+  data:
+    service-ca.crt: |
+      -----BEGIN CERTIFICATE-----
+      MIIDCjCCAfKgAwIBAgIBATANBgkqhkiG9w0BAQsFADA2MTQwMgYDVQQDDCtvcGVu
+      c2hpZnQtc2VydmljZS1zZXJ2aW5nLXNpZ25lckAxNTcwODQwNzkzMB4XDTE5MTAx
+      MjAwMzk1MloXDTIwMTAxMTAwMzk1M1owNjE0MDIGA1UEAwwrb3BlbnNoaWZ0LXNl
+      cnZpY2Utc2VydmluZy1zaWduZXJAMTU3MDg0MDc5MzCCASIwDQYJKoZIhvcNAQEB
+      BQADggEPADCCAQoCggEBALl8ykfAkoT0/bSggvvH1TzWhC2fiD/IWU3jnkVvs2p+
+      ePr8qAF6SmZkmROVQWv4e9x/n9AEv8DE5agycpxx+FP9iJ8Gkw4diEElAFQxeMPX
+      kzIreUF5nFUJFn3ywXFYoxJRaYcih7N7KMxHZujJLws2fYcMJkrKI8Nosf/qWAoJ
+      7G43CBV4CTm5QH0UelBiei3G6CoP171tLA1Fy2VRDbtryjVxzPs36XAJ1d6xdmfZ
+      V1tMg0YRIRdPVljHvukv+MB+QT5PXguv9PpYgJ+kncmS7XrhwVuhGBrYQiezHgFD
+      LchS3+sg5NP6VxjFp81jJXByCKOGXogjwjwFtoQIpeECAwEAAaMjMCEwDgYDVR0P
+      AQH/BAQDAgKkMA8GA1UdEwEB/wQFMAMBAf8wDQYJKoZIhvcNAQELBQADggEBAHOH
+      5NHktgmtaXkFfieD2chQWoooOuo+u5yGBVgk954mhLEU9ASgQrCy+FCUCJIYOt3z
+      oOiLEUOiaf4Lryk7rkaCiEnikgSGIFd51E/PRUb0trkNGkizw0k/1gYn9ndP3pZ2
+      sY24mtur1/Tpruz+PR9v78jnuNDZPDHXgVgNSLkz8o4Y7ifE9TEEHhFI2fPOCSqO
+      BON00TJ4yOFsfdZ7WqI61S/eAm1nYpFr/vXPw4T9+1YJDQuqiWgZ3i5/lFIIiPGQ
+      D+be7fjTh+8+9Ghw1Yw/vugH/LIyX1KbkeAbBE309SbSaWsEe11lb6q9I4rH+xUv
+      Hkf6D90ieOBWpQfV0Vo=
+      -----END CERTIFICATE-----
+  kind: ConfigMap
+  metadata:
+    creationTimestamp: "2019-10-12T17:09:04Z"
+    name: uploader-app-5-ca
+    namespace: uploader
+    ownerReferences:
+    - apiVersion: v1
+      kind: Pod
+      name: uploader-app-5-build
+      uid: feb162df-ed12-11e9-884c-0ab5bf0f89de
+    resourceVersion: "315453"
+    selfLink: /api/v1/namespaces/uploader/configmaps/uploader-app-5-ca
+    uid: feb3cecf-ed12-11e9-884c-0ab5bf0f89de
+- apiVersion: v1
+  kind: ConfigMap
+  metadata:
+    creationTimestamp: "2019-10-12T17:09:04Z"
+    name: uploader-app-5-sys-config
+    namespace: uploader
+    ownerReferences:
+    - apiVersion: v1
+      kind: Pod
+      name: uploader-app-5-build
+      uid: feb162df-ed12-11e9-884c-0ab5bf0f89de
+    resourceVersion: "315455"
+    selfLink: /api/v1/namespaces/uploader/configmaps/uploader-app-5-sys-config
+    uid: feb48931-ed12-11e9-884c-0ab5bf0f89de
+- apiVersion: v1
+  data:
+    service-ca.crt: |
+      -----BEGIN CERTIFICATE-----
+      MIIDCjCCAfKgAwIBAgIBATANBgkqhkiG9w0BAQsFADA2MTQwMgYDVQQDDCtvcGVu
+      c2hpZnQtc2VydmljZS1zZXJ2aW5nLXNpZ25lckAxNTcwODQwNzkzMB4XDTE5MTAx
+      MjAwMzk1MloXDTIwMTAxMTAwMzk1M1owNjE0MDIGA1UEAwwrb3BlbnNoaWZ0LXNl
+      cnZpY2Utc2VydmluZy1zaWduZXJAMTU3MDg0MDc5MzCCASIwDQYJKoZIhvcNAQEB
+      BQADggEPADCCAQoCggEBALl8ykfAkoT0/bSggvvH1TzWhC2fiD/IWU3jnkVvs2p+
+      ePr8qAF6SmZkmROVQWv4e9x/n9AEv8DE5agycpxx+FP9iJ8Gkw4diEElAFQxeMPX
+      kzIreUF5nFUJFn3ywXFYoxJRaYcih7N7KMxHZujJLws2fYcMJkrKI8Nosf/qWAoJ
+      7G43CBV4CTm5QH0UelBiei3G6CoP171tLA1Fy2VRDbtryjVxzPs36XAJ1d6xdmfZ
+      V1tMg0YRIRdPVljHvukv+MB+QT5PXguv9PpYgJ+kncmS7XrhwVuhGBrYQiezHgFD
+      LchS3+sg5NP6VxjFp81jJXByCKOGXogjwjwFtoQIpeECAwEAAaMjMCEwDgYDVR0P
+      AQH/BAQDAgKkMA8GA1UdEwEB/wQFMAMBAf8wDQYJKoZIhvcNAQELBQADggEBAHOH
+      5NHktgmtaXkFfieD2chQWoooOuo+u5yGBVgk954mhLEU9ASgQrCy+FCUCJIYOt3z
+      oOiLEUOiaf4Lryk7rkaCiEnikgSGIFd51E/PRUb0trkNGkizw0k/1gYn9ndP3pZ2
+      sY24mtur1/Tpruz+PR9v78jnuNDZPDHXgVgNSLkz8o4Y7ifE9TEEHhFI2fPOCSqO
+      BON00TJ4yOFsfdZ7WqI61S/eAm1nYpFr/vXPw4T9+1YJDQuqiWgZ3i5/lFIIiPGQ
+      D+be7fjTh+8+9Ghw1Yw/vugH/LIyX1KbkeAbBE309SbSaWsEe11lb6q9I4rH+xUv
+      Hkf6D90ieOBWpQfV0Vo=
+      -----END CERTIFICATE-----
+  kind: ConfigMap
+  metadata:
+    creationTimestamp: "2019-10-12T17:11:12Z"
+    name: uploader-app-6-ca
+    namespace: uploader
+    ownerReferences:
+    - apiVersion: v1
+      kind: Pod
+      name: uploader-app-6-build
+      uid: 4a824bee-ed13-11e9-884c-0ab5bf0f89de
+    resourceVersion: "316216"
+    selfLink: /api/v1/namespaces/uploader/configmaps/uploader-app-6-ca
+    uid: 4a853229-ed13-11e9-884c-0ab5bf0f89de
+- apiVersion: v1
+  kind: ConfigMap
+  metadata:
+    creationTimestamp: "2019-10-12T17:11:12Z"
+    name: uploader-app-6-sys-config
+    namespace: uploader
+    ownerReferences:
+    - apiVersion: v1
+      kind: Pod
+      name: uploader-app-6-build
+      uid: 4a824bee-ed13-11e9-884c-0ab5bf0f89de
+    resourceVersion: "316217"
+    selfLink: /api/v1/namespaces/uploader/configmaps/uploader-app-6-sys-config
+    uid: 4a8622b1-ed13-11e9-884c-0ab5bf0f89de
+- apiVersion: v1
+  data:
+    service-ca.crt: |
+      -----BEGIN CERTIFICATE-----
+      MIIDCjCCAfKgAwIBAgIBATANBgkqhkiG9w0BAQsFADA2MTQwMgYDVQQDDCtvcGVu
+      c2hpZnQtc2VydmljZS1zZXJ2aW5nLXNpZ25lckAxNTcwODQwNzkzMB4XDTE5MTAx
+      MjAwMzk1MloXDTIwMTAxMTAwMzk1M1owNjE0MDIGA1UEAwwrb3BlbnNoaWZ0LXNl
+      cnZpY2Utc2VydmluZy1zaWduZXJAMTU3MDg0MDc5MzCCASIwDQYJKoZIhvcNAQEB
+      BQADggEPADCCAQoCggEBALl8ykfAkoT0/bSggvvH1TzWhC2fiD/IWU3jnkVvs2p+
+      ePr8qAF6SmZkmROVQWv4e9x/n9AEv8DE5agycpxx+FP9iJ8Gkw4diEElAFQxeMPX
+      kzIreUF5nFUJFn3ywXFYoxJRaYcih7N7KMxHZujJLws2fYcMJkrKI8Nosf/qWAoJ
+      7G43CBV4CTm5QH0UelBiei3G6CoP171tLA1Fy2VRDbtryjVxzPs36XAJ1d6xdmfZ
+      V1tMg0YRIRdPVljHvukv+MB+QT5PXguv9PpYgJ+kncmS7XrhwVuhGBrYQiezHgFD
+      LchS3+sg5NP6VxjFp81jJXByCKOGXogjwjwFtoQIpeECAwEAAaMjMCEwDgYDVR0P
+      AQH/BAQDAgKkMA8GA1UdEwEB/wQFMAMBAf8wDQYJKoZIhvcNAQELBQADggEBAHOH
+      5NHktgmtaXkFfieD2chQWoooOuo+u5yGBVgk954mhLEU9ASgQrCy+FCUCJIYOt3z
+      oOiLEUOiaf4Lryk7rkaCiEnikgSGIFd51E/PRUb0trkNGkizw0k/1gYn9ndP3pZ2
+      sY24mtur1/Tpruz+PR9v78jnuNDZPDHXgVgNSLkz8o4Y7ifE9TEEHhFI2fPOCSqO
+      BON00TJ4yOFsfdZ7WqI61S/eAm1nYpFr/vXPw4T9+1YJDQuqiWgZ3i5/lFIIiPGQ
+      D+be7fjTh+8+9Ghw1Yw/vugH/LIyX1KbkeAbBE309SbSaWsEe11lb6q9I4rH+xUv
+      Hkf6D90ieOBWpQfV0Vo=
+      -----END CERTIFICATE-----
+  kind: ConfigMap
+  metadata:
+    creationTimestamp: "2019-10-12T17:13:21Z"
+    name: uploader-app-7-ca
+    namespace: uploader
+    ownerReferences:
+    - apiVersion: v1
+      kind: Pod
+      name: uploader-app-7-build
+      uid: 97670963-ed13-11e9-884c-0ab5bf0f89de
+    resourceVersion: "316890"
+    selfLink: /api/v1/namespaces/uploader/configmaps/uploader-app-7-ca
+    uid: 9769dafd-ed13-11e9-884c-0ab5bf0f89de
+- apiVersion: v1
+  kind: ConfigMap
+  metadata:
+    creationTimestamp: "2019-10-12T17:13:21Z"
+    name: uploader-app-7-sys-config
+    namespace: uploader
+    ownerReferences:
+    - apiVersion: v1
+      kind: Pod
+      name: uploader-app-7-build
+      uid: 97670963-ed13-11e9-884c-0ab5bf0f89de
+    resourceVersion: "316892"
+    selfLink: /api/v1/namespaces/uploader/configmaps/uploader-app-7-sys-config
+    uid: 976ac5e1-ed13-11e9-884c-0ab5bf0f89de
+- apiVersion: v1
+  data:
+    service-ca.crt: |
+      -----BEGIN CERTIFICATE-----
+      MIIDCjCCAfKgAwIBAgIBATANBgkqhkiG9w0BAQsFADA2MTQwMgYDVQQDDCtvcGVu
+      c2hpZnQtc2VydmljZS1zZXJ2aW5nLXNpZ25lckAxNTcwODQwNzkzMB4XDTE5MTAx
+      MjAwMzk1MloXDTIwMTAxMTAwMzk1M1owNjE0MDIGA1UEAwwrb3BlbnNoaWZ0LXNl
+      cnZpY2Utc2VydmluZy1zaWduZXJAMTU3MDg0MDc5MzCCASIwDQYJKoZIhvcNAQEB
+      BQADggEPADCCAQoCggEBALl8ykfAkoT0/bSggvvH1TzWhC2fiD/IWU3jnkVvs2p+
+      ePr8qAF6SmZkmROVQWv4e9x/n9AEv8DE5agycpxx+FP9iJ8Gkw4diEElAFQxeMPX
+      kzIreUF5nFUJFn3ywXFYoxJRaYcih7N7KMxHZujJLws2fYcMJkrKI8Nosf/qWAoJ
+      7G43CBV4CTm5QH0UelBiei3G6CoP171tLA1Fy2VRDbtryjVxzPs36XAJ1d6xdmfZ
+      V1tMg0YRIRdPVljHvukv+MB+QT5PXguv9PpYgJ+kncmS7XrhwVuhGBrYQiezHgFD
+      LchS3+sg5NP6VxjFp81jJXByCKOGXogjwjwFtoQIpeECAwEAAaMjMCEwDgYDVR0P
+      AQH/BAQDAgKkMA8GA1UdEwEB/wQFMAMBAf8wDQYJKoZIhvcNAQELBQADggEBAHOH
+      5NHktgmtaXkFfieD2chQWoooOuo+u5yGBVgk954mhLEU9ASgQrCy+FCUCJIYOt3z
+      oOiLEUOiaf4Lryk7rkaCiEnikgSGIFd51E/PRUb0trkNGkizw0k/1gYn9ndP3pZ2
+      sY24mtur1/Tpruz+PR9v78jnuNDZPDHXgVgNSLkz8o4Y7ifE9TEEHhFI2fPOCSqO
+      BON00TJ4yOFsfdZ7WqI61S/eAm1nYpFr/vXPw4T9+1YJDQuqiWgZ3i5/lFIIiPGQ
+      D+be7fjTh+8+9Ghw1Yw/vugH/LIyX1KbkeAbBE309SbSaWsEe11lb6q9I4rH+xUv
+      Hkf6D90ieOBWpQfV0Vo=
+      -----END CERTIFICATE-----
+  kind: ConfigMap
+  metadata:
+    creationTimestamp: "2019-10-12T17:16:13Z"
+    name: uploader-app-8-ca
+    namespace: uploader
+    ownerReferences:
+    - apiVersion: v1
+      kind: Pod
+      name: uploader-app-8-build
+      uid: fdeca02e-ed13-11e9-884c-0ab5bf0f89de
+    resourceVersion: "317920"
+    selfLink: /api/v1/namespaces/uploader/configmaps/uploader-app-8-ca
+    uid: fdefaf29-ed13-11e9-884c-0ab5bf0f89de
+- apiVersion: v1
+  kind: ConfigMap
+  metadata:
+    creationTimestamp: "2019-10-12T17:16:13Z"
+    name: uploader-app-8-sys-config
+    namespace: uploader
+    ownerReferences:
+    - apiVersion: v1
+      kind: Pod
+      name: uploader-app-8-build
+      uid: fdeca02e-ed13-11e9-884c-0ab5bf0f89de
+    resourceVersion: "317921"
+    selfLink: /api/v1/namespaces/uploader/configmaps/uploader-app-8-sys-config
+    uid: fdf0b368-ed13-11e9-884c-0ab5bf0f89de
+- apiVersion: v1
+  data:
+    service-ca.crt: |
+      -----BEGIN CERTIFICATE-----
+      MIIDCjCCAfKgAwIBAgIBATANBgkqhkiG9w0BAQsFADA2MTQwMgYDVQQDDCtvcGVu
+      c2hpZnQtc2VydmljZS1zZXJ2aW5nLXNpZ25lckAxNTcwODQwNzkzMB4XDTE5MTAx
+      MjAwMzk1MloXDTIwMTAxMTAwMzk1M1owNjE0MDIGA1UEAwwrb3BlbnNoaWZ0LXNl
+      cnZpY2Utc2VydmluZy1zaWduZXJAMTU3MDg0MDc5MzCCASIwDQYJKoZIhvcNAQEB
+      BQADggEPADCCAQoCggEBALl8ykfAkoT0/bSggvvH1TzWhC2fiD/IWU3jnkVvs2p+
+      ePr8qAF6SmZkmROVQWv4e9x/n9AEv8DE5agycpxx+FP9iJ8Gkw4diEElAFQxeMPX
+      kzIreUF5nFUJFn3ywXFYoxJRaYcih7N7KMxHZujJLws2fYcMJkrKI8Nosf/qWAoJ
+      7G43CBV4CTm5QH0UelBiei3G6CoP171tLA1Fy2VRDbtryjVxzPs36XAJ1d6xdmfZ
+      V1tMg0YRIRdPVljHvukv+MB+QT5PXguv9PpYgJ+kncmS7XrhwVuhGBrYQiezHgFD
+      LchS3+sg5NP6VxjFp81jJXByCKOGXogjwjwFtoQIpeECAwEAAaMjMCEwDgYDVR0P
+      AQH/BAQDAgKkMA8GA1UdEwEB/wQFMAMBAf8wDQYJKoZIhvcNAQELBQADggEBAHOH
+      5NHktgmtaXkFfieD2chQWoooOuo+u5yGBVgk954mhLEU9ASgQrCy+FCUCJIYOt3z
+      oOiLEUOiaf4Lryk7rkaCiEnikgSGIFd51E/PRUb0trkNGkizw0k/1gYn9ndP3pZ2
+      sY24mtur1/Tpruz+PR9v78jnuNDZPDHXgVgNSLkz8o4Y7ifE9TEEHhFI2fPOCSqO
+      BON00TJ4yOFsfdZ7WqI61S/eAm1nYpFr/vXPw4T9+1YJDQuqiWgZ3i5/lFIIiPGQ
+      D+be7fjTh+8+9Ghw1Yw/vugH/LIyX1KbkeAbBE309SbSaWsEe11lb6q9I4rH+xUv
+      Hkf6D90ieOBWpQfV0Vo=
+      -----END CERTIFICATE-----
+  kind: ConfigMap
+  metadata:
+    creationTimestamp: "2019-10-12T17:23:37Z"
+    name: uploader-app-9-ca
+    namespace: uploader
+    ownerReferences:
+    - apiVersion: v1
+      kind: Pod
+      name: uploader-app-9-build
+      uid: 06730ce8-ed15-11e9-884c-0ab5bf0f89de
+    resourceVersion: "320294"
+    selfLink: /api/v1/namespaces/uploader/configmaps/uploader-app-9-ca
+    uid: 0675f546-ed15-11e9-884c-0ab5bf0f89de
+- apiVersion: v1
+  kind: ConfigMap
+  metadata:
+    creationTimestamp: "2019-10-12T17:23:37Z"
+    name: uploader-app-9-sys-config
+    namespace: uploader
+    ownerReferences:
+    - apiVersion: v1
+      kind: Pod
+      name: uploader-app-9-build
+      uid: 06730ce8-ed15-11e9-884c-0ab5bf0f89de
+    resourceVersion: "320296"
+    selfLink: /api/v1/namespaces/uploader/configmaps/uploader-app-9-sys-config
+    uid: 06771135-ed15-11e9-884c-0ab5bf0f89de
+kind: List
+metadata:
+  resourceVersion: ""
+  selfLink: ""

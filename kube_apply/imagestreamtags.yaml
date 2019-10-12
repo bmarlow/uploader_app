@@ -1,0 +1,74 @@
+apiVersion: v1
+items:
+- apiVersion: image.openshift.io/v1
+  generation: 2
+  image:
+    dockerImageLayers: null
+    dockerImageMetadata:
+      ContainerConfig: {}
+      Created: null
+      Id: ""
+      apiVersion: "1.0"
+      kind: DockerImage
+    dockerImageMetadataVersion: "1.0"
+    dockerImageReference: centos@sha256:a36b9e68613d07eec4ef553da84d0012a5ca5ae4a830cf825bb68b929475c869
+    metadata:
+      creationTimestamp: null
+      name: sha256:a36b9e68613d07eec4ef553da84d0012a5ca5ae4a830cf825bb68b929475c869
+  kind: ImageStreamTag
+  lookupPolicy:
+    local: false
+  metadata:
+    annotations:
+      openshift.io/imported-from: centos:centos7
+    creationTimestamp: "2019-10-12T16:59:06Z"
+    labels:
+      app: uploader-app
+    name: centos:centos7
+    namespace: uploader
+    resourceVersion: "312110"
+    selfLink: /apis/image.openshift.io/v1/namespaces/uploader/imagestreamtags/centos%3Acentos7
+    uid: 99be8cb7-ed11-11e9-9ce5-0a580a82001b
+  tag:
+    annotations:
+      openshift.io/imported-from: centos:centos7
+    from:
+      kind: DockerImage
+      name: centos:centos7
+    generation: 2
+    importPolicy: {}
+    name: centos7
+    referencePolicy:
+      type: Source
+- apiVersion: image.openshift.io/v1
+  generation: 1
+  image:
+    dockerImageLayers: null
+    dockerImageMetadata:
+      ContainerConfig: {}
+      Created: null
+      Id: ""
+      apiVersion: "1.0"
+      kind: DockerImage
+    dockerImageMetadataVersion: "1.0"
+    dockerImageReference: image-registry.openshift-image-registry.svc:5000/uploader/uploader-app@sha256:34e644f206823b958f3e2f296a9c0159badeb36c83e6f9226681b288b3affea4
+    metadata:
+      creationTimestamp: null
+      name: sha256:34e644f206823b958f3e2f296a9c0159badeb36c83e6f9226681b288b3affea4
+  kind: ImageStreamTag
+  lookupPolicy:
+    local: false
+  metadata:
+    creationTimestamp: "2019-10-12T17:24:42Z"
+    labels:
+      app: uploader-app
+    name: uploader-app:latest
+    namespace: uploader
+    resourceVersion: "320657"
+    selfLink: /apis/image.openshift.io/v1/namespaces/uploader/imagestreamtags/uploader-app%3Alatest
+    uid: 99cdd0b8-ed11-11e9-a2f5-0a580a80001b
+  tag: null
+kind: List
+metadata:
+  resourceVersion: ""
+  selfLink: ""
