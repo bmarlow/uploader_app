@@ -13,6 +13,16 @@ def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 
+def fire_kafka_producer_log(filename):
+    logging.info('kafka function entered')
+    producer = kafka.KafkaProducer(bootstrap_servers='my-cluster-kafka-bootstrap:9092')
+    logging.info('kafka producer defined')
+    enc_message = bytes('this is a test message that ' + filename + ' was received', encoding='utf-8')
+    logging.info('message encoded, message is: ' + bytes.decode(enc_message))
+    producer.send('file-received', enc_message)
+    logging.info('message sent')
+
+
 @app.route('/')
 def upload_form():
     return render_template('upload.html')
@@ -30,7 +40,7 @@ def upload_file():
             if file and allowed_file(file.filename):
                 filename = secure_filename(file.filename)
                 file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-                fire_kafka_producer_log(filename)
+                fire_kafka_producer_log(file.filename)
         flash('File(s) successfully uploaded')
         return redirect('/')
 
@@ -76,14 +86,6 @@ def kafka_producer_test():
     return redirect('/')
 
 
-def fire_kafka_producer_log(filename):
-    logging.info('kafka function entered')
-    producer = kafka.KafkaProducer(bootstrap_servers='my-cluster-kafka-bootstrap:9092')
-    logging.info('kafka producer defined')
-    enc_message = bytes('this is a test message that ' + filename + ' was received', encoding='utf-8')
-    logging.info('message encoded, message is: ' + bytes.decode(enc_message))
-    producer.send('file-received', enc_message)
-    logging.info('message sent')
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', debug=True)
