@@ -13,7 +13,7 @@ RUN yum -y install python3 python3-devel
 
 #install python pre-reqs
 RUN pip3 install --upgrade pip
-RUN pip3 install flask app
+RUN pip3 install flask app urllib
 
 WORKDIR /root/
 CMD python main.py
