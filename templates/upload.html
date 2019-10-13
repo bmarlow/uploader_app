@@ -2,52 +2,64 @@
 <head>
 	<title>Machine Learning with Mario!!</title>
 	<style>
-		.imgsrc ( width: auto; height: auto; }
+		.autosize ( width: 100%; height: auto; }
 	</style>
 </head>
+	<img src="{{url_for('static', filename='mario_banner.jpg')}}" class="autosize" />
 
+	<h2>Select file(s) to upload</h2>
+<table>
 
-<div class="imgsrc">
-	<img src="{{url_for('static', filename='mario_banner.jpg')}}" />
-</div>
+	<tr>
+		<td>
+			{% with messages = get_flashed_messages() %}
+			  {% if messages %}
+				<ul class=flashes>
+				{% for message in messages %}
+				  <li>{{ message }}</li>
+				{% endfor %}
+				</ul>
+			  {% endif %}
+			{% endwith %}
+		</td>
 
-<h2>Select file(s) to upload</h2>
-<p>
-	{% with messages = get_flashed_messages() %}
-	  {% if messages %}
-		<ul class=flashes>
-		{% for message in messages %}
-		  <li>{{ message }}</li>
-		{% endfor %}
-		</ul>
-	  {% endif %}
-	{% endwith %}
-</p>
-<form method="post" action="/" enctype="multipart/form-data">
-    <dl>
-		<p>
-			<input type="file" name="files[]" multiple="true" autocomplete="off" required>
-		</p>
-    </dl>
-    <p>
-		<input type="submit" value="Submit">
-	</p>
-</form>
+		<td>
+			<form method="post" action="/" enctype="multipart/form-data">
+				<dl>
+					<p>
+						<input type="file" name="files[]" multiple="true" autocomplete="off" required>
+					</p>
+				</dl>
+				<p>
+					<input type="submit" value="Submit">
+				</p>
+			</form>
+		</td>
+	</tr>
 
-<form method="post" action="/pre-staged" enctype="multipart/form-data">
-		<input type="submit" value="Use Pre-Staged Files">
-</form>
+	<tr>
+		<td>
+			<form method="post" action="/pre-staged" enctype="multipart/form-data">
+					<input type="submit" value="Use Pre-Staged Files">
+			</form>
+		</td>
 
-<form method="post" action="/reset" enctype="multipart/form-data">
-		<input type="submit" value="Reset Stage Files">
-	</p>
-</form>
+		<td>
+			<form method="post" action="/reset" enctype="multipart/form-data">
+					<input type="submit" value="Reset Stage Files">
+			</form>
+		</td>
+	</tr>
 
-<p>
-</p>
-<iframe src="/file-list" frameborder="0" name="iframe"></iframe>
+	<tr></tr>
 
+	<tr>
+		<td>
+			<iframe src="/file-list" frameborder="0" name="iframe"></iframe>
+		</td>
+	</tr>
 
+</table>
 <script>
 window.setInterval("reloadIFrame();", 5000);
 
