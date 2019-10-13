@@ -1,4 +1,4 @@
-FROM registry.access.redhat.com/ubi7/ubi
+FROM registry.access.redhat.com/ubi7/ubi:latest
 
 #add my files
 ADD app.py /root/
