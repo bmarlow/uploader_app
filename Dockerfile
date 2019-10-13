@@ -1,5 +1,4 @@
 FROM registry.access.redhat.com/ubi7/ubi
-#FROM centos:centos7
 
 #add my files
 ADD app.py /root/
