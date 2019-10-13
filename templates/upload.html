@@ -35,4 +35,13 @@
 
 <p>
 </p>
-<iframe src="/file-list" frameborder="0"></iframe>
+<iframe src="/file-list" frameborder="0" name="iframe"></iframe>
+
+
+<script>
+window.setInterval("reloadIFrame();", 2000);
+
+function reloadIFrame() {
+ document.frames["iframe"].location.reload();
+}
+</script>
