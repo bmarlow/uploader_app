@@ -2,68 +2,67 @@
 <head>
 	<title>Machine Learning with Mario!!</title>
 	<style>
-		.autosize ( width: 100%; height: auto; }
+		.autosize { width: 100%; height: auto; }
 	</style>
 </head>
+	<body>
+		<img src="{{url_for('static', filename='mario_banner.jpg')}}" class="autosize" />
 
-<body style='font-family="sans-serif"'>
+		<h2 style="font-family:verdana">Select file(s) to upload</h2>
+		<table>
 
-	<img src="{{url_for('static', filename='mario_banner.jpg')}}" class="autosize" />
+			<tr>
+				<td>
+					<form method="post" action="/" enctype="multipart/form-data">
+					<input type="file" name="files[]" multiple="true" autocomplete="off" required>
+				</td>
+				<td>
+					<input type="submit" value="Submit">
+					</form>
+				</td>
+			</tr>
 
-	<h2>Select file(s) to upload</h2>
-<table>
+			<tr>
+				<td>
+					<form method="post" action="/pre-staged" enctype="multipart/form-data">
+							<input type="submit" value="Use Pre-Staged Files">
+					</form>
+				</td>
 
-	<tr>
-		<td>
-			<form method="post" action="/" enctype="multipart/form-data">
-			<input type="file" name="files[]" multiple="true" autocomplete="off" required>
-		</td>
-		<td>
-			<input type="submit" value="Submit">
-			</form>
-		</td>
-	</tr>
+				<td>
+					<form method="post" action="/reset" enctype="multipart/form-data">
+							<input type="submit" value="Reset Stage Files">
+					</form>
+				</td>
+			</tr>
 
-	<tr>
-		<td>
-			<form method="post" action="/pre-staged" enctype="multipart/form-data">
-					<input type="submit" value="Use Pre-Staged Files">
-			</form>
-		</td>
+			<tr></tr>
 
-		<td>
-			<form method="post" action="/reset" enctype="multipart/form-data">
-					<input type="submit" value="Reset Stage Files">
-			</form>
-		</td>
-	</tr>
+			<tr>
+				<td>
+					{% with messages = get_flashed_messages() %}
+					  {% if messages %}
+						<ul class=flashes>
+						{% for message in messages %}
+						  <li>{{ message }}</li>
+						{% endfor %}
+						</ul>
+					  {% endif %}
+					{% endwith %}
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<iframe src="/file-list" frameborder="0" name="iframe"></iframe>
+				</td>
+			</tr>
 
-	<tr></tr>
+		</table>
+		<script>
+		window.setInterval("reloadIFrame();", 5000);
 
-	<tr>
-		<td>
-			{% with messages = get_flashed_messages() %}
-			  {% if messages %}
-				<ul class=flashes>
-				{% for message in messages %}
-				  <li>{{ message }}</li>
-				{% endfor %}
-				</ul>
-			  {% endif %}
-			{% endwith %}
-		</td>
-	</tr>
-	<tr>
-		<td>
-			<iframe src="/file-list" frameborder="0" name="iframe"></iframe>
-		</td>
-	</tr>
-
-</table>
-<script>
-window.setInterval("reloadIFrame();", 5000);
-
-function reloadIFrame() {
- window.frames["iframe"].location.reload();
-}
-</script>
+		function reloadIFrame() {
+		 window.frames["iframe"].location.reload();
+		}
+		</script>
+</body>
