@@ -14,18 +14,6 @@
 
 	<tr>
 		<td>
-			{% with messages = get_flashed_messages() %}
-			  {% if messages %}
-				<ul class=flashes>
-				{% for message in messages %}
-				  <li>{{ message }}</li>
-				{% endfor %}
-				</ul>
-			  {% endif %}
-			{% endwith %}
-		</td>
-
-		<td>
 			<form method="post" action="/" enctype="multipart/form-data">
 			</form>
 			<input type="file" name="files[]" multiple="true" autocomplete="off" required>
@@ -52,6 +40,19 @@
 
 	<tr></tr>
 
+	<tr>
+		<td>
+			{% with messages = get_flashed_messages() %}
+			  {% if messages %}
+				<ul class=flashes>
+				{% for message in messages %}
+				  <li>{{ message }}</li>
+				{% endfor %}
+				</ul>
+			  {% endif %}
+			{% endwith %}
+		</td>
+	</tr>
 	<tr>
 		<td>
 			<iframe src="/file-list" frameborder="0" name="iframe"></iframe>
