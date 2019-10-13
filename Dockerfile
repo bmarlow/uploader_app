@@ -5,6 +5,7 @@ ADD app.py /root/
 ADD main.py /root/
 RUN mkdir /root/templates
 ADD templates/upload.html /root/templates
+ADD templates/file-list.html /root/templates
 RUN mkdir /root/uploads
 RUN chmod 777 /root/uploads
 RUN mkdir /root/processed
