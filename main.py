@@ -13,8 +13,15 @@ def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 
-@app.route('/', defaults={'req_path': ''})
-@app.route('/<path:req_path>')
+@app.route('/')
+
+def upload_form():
+    return render_template('upload.html')
+
+
+@app.route('/file-list', defaults={'req_path': ''})
+@app.route('/file-list/<path:req_path>')
+
 def dir_listing(req_path):
     BASE_DIR = '/root/processed'
 
@@ -31,10 +38,8 @@ def dir_listing(req_path):
 
     # Show directory contents
     files = os.listdir(abs_path)
-    return render_template('upload.html', files=files)
+    return render_template('file-list.html', files=files)
 
-#def upload_form():
-#    return render_template('upload.html')
 
 @app.route('/', methods=['POST'])
 def upload_file():

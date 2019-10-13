@@ -1,0 +1,8 @@
+{% if files %}
+<b>The following files have been processed</b>
+<ul>
+    {% for file in files %}
+    <li><a href="{{ file }}">{{ file }}</a></li>
+    {% endfor %}
+</ul>
+{% endif %}
