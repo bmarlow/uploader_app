@@ -14,12 +14,6 @@ RUN chmod 777 /root/uploads
 RUN mkdir /root/processed
 RUN chmod 777 /root/processed
 
-
-
-RUN touch /root/processed/test1.txt
-RUN touch /root/processed/test2.txt
-
-
 #install pre-reqs
 RUN yum -y --disableplugin=subscription-manager install python3 shutil wget
 
