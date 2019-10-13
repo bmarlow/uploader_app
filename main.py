@@ -3,7 +3,7 @@ import os
 import urllib.request
 import shutil, kafka, logging
 from app import app
-from flask import Flask, flash, request, redirect, render_template, abort, send_file, jsonify
+from flask import Flask, flash, request, redirect, render_template, abort, send_file, jsonify, subprocess
 from werkzeug.utils import secure_filename
 
 ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif', 'npy'])
@@ -122,9 +122,8 @@ def api_upload_file():
 def reset():
     if request.method == 'POST':
         try:
-            shutil.rmtree("/root/uploads")
-            shutil.rmtree("/root/processed")
-            shutil.rmtree("/root/results")
+            subprocess.run('rm /root/uploads/*;, shell=True')
+            subprocess.run('rm /root/processed/*;, shell=True')
         except Exception as e:
             print('error was ' + str(e))
             return redirect('/')
