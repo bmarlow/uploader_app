@@ -81,8 +81,22 @@ def download_files(path):
     flash('File downloaded')
     return redirect('/')
 
+@app.route("/processed/<path>", methods=['GET'])
+def download_processed_files(path):
+    if path is None:
+        abort(400, 'empty path not allowed')
+    try:
+        return send_file('/root/processed/' + path, as_attachment=True)
+    except Exception as e:
+        abort(404, 'file not found, sorry')
+
+    flash('File downloaded')
+    return redirect('/')
+
+
+
 @app.route('/api-upload', methods=['POST'])
-def upload_file():
+def api_upload_file():
     # check if the post request has the file part
     if 'file' not in request.files:
         resp = jsonify({'message' : 'No file part in the request'})
