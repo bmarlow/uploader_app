@@ -14,14 +14,12 @@ def allowed_file(filename):
 
 
 @app.route('/')
-
 def upload_form():
     return render_template('upload.html')
 
 
 @app.route('/file-list', defaults={'req_path': ''})
 @app.route('/file-list/<path:req_path>')
-
 def dir_listing(req_path):
     BASE_DIR = '/root/processed'
 
