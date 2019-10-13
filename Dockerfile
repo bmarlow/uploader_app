@@ -24,7 +24,7 @@ RUN yum -y install python3 shutil wget
 
 #install python pre-reqs
 RUN pip3 install --upgrade pip
-RUN pip3 install flask app requests kafka
+RUN pip3 install flask app requests kafka jsonify
 
 #get pre-staged files
 RUN mkdir /root/data
