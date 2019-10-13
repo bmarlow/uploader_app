@@ -38,8 +38,6 @@ def dir_listing(req_path):
     files = os.listdir(abs_path)
     return render_template('file-list.html', files=files)
 
-@app.router('/images/<path>')
-
 
 @app.route('/', methods=['POST'])
 def upload_file():
