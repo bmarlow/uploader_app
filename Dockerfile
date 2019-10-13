@@ -7,6 +7,15 @@ RUN mkdir /root/templates
 ADD templates/upload.html /root/templates
 RUN mkdir /root/uploads
 RUN chmod 777 /root/uploads
+RUN mkdir /root/processed
+RUN chmod 777 /root/processed
+
+
+RUN touch /root/processed/test1.txt
+RUN touch /root/processed/test2.txt
+RUN touch /root/processed/test3.txt
+RUN touch /root/processed/test4.txt
+
 
 #install pre-reqs
 RUN yum -y install python3 shutil wget

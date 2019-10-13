@@ -32,3 +32,11 @@
 		<input type="submit" value="Reset Stage Files">
 	</p>
 </form>
+
+
+
+<ul>
+    {% for file in files %}
+    <li><a href="{{ file }}">{{ file }}</a></li>
+    {% endfor %}
+</ul>
