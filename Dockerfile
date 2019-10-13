@@ -15,7 +15,7 @@ RUN mkdir /root/processed
 RUN chmod 777 /root/processed
 
 #install pre-reqs
-RUN yum -y --disableplugin=subscription-manager install python3 shutil wget
+RUN yum -y --disableplugin=subscription-manager install python3 shutil wget pathlib
 
 
 #install python pre-reqs
