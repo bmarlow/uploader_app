@@ -108,7 +108,7 @@ def api_upload_file():
         return resp
     if file and allowed_file(file.filename):
         filename = secure_filename(file.filename)
-        file.save(os.path.join(app.config['/root/processed'], filename))
+        file.save(os.path.join('/root/processed', filename))
         resp = jsonify({'message' : 'File successfully uploaded'})
         resp.status_code = 201
         return resp
