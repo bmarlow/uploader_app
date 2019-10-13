@@ -60,8 +60,8 @@ def upload_file():
 @app.route('/pre-staged', methods=['POST'])
 def stage_files():
     if request.method == 'POST':
-        shutil.move("/root/data/X.npy", "/root/uploads/X.npy")
-        shutil.move("/root/data/y.npy", "/root/uploads/y.npy")
+        shutil.copy("/root/data/X.npy", "/root/uploads/X.npy")
+        shutil.copy("/root/data/y.npy", "/root/uploads/y.npy")
         producer.send('file-received', b'The following file was received: X.npy')
         producer.send('file-received', b'The following file was received: y.npy')
         flash('Staging files used')
@@ -124,8 +124,6 @@ def reset():
         try:
             shutil.rmtree("/root/uploads")
             shutil.rmtree("/root/processed")
-            os.open('/root/data/X.npy', 'a').close()
-            os.open('/root/data/y.npy', 'a').close()
         except Exception as e:
             print('error was ' + str(e))
             return redirect('/')
