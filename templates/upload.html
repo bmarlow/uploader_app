@@ -5,6 +5,8 @@
 		.autosize ( width: 100%; height: auto; }
 	</style>
 </head>
+
+<basefont face = "arial, verdana, sans-serif">
 	<img src="{{url_for('static', filename='mario_banner.jpg')}}" class="autosize" />
 
 	<h2>Select file(s) to upload</h2>
@@ -25,14 +27,11 @@
 
 		<td>
 			<form method="post" action="/" enctype="multipart/form-data">
-				<dl>
-					<p>
-						<input type="file" name="files[]" multiple="true" autocomplete="off" required>
-					</p>
-				</dl>
-				<p>
-					<input type="submit" value="Submit">
-				</p>
+			</form>
+			<input type="file" name="files[]" multiple="true" autocomplete="off" required>
+		</td>
+		<td>
+			<input type="submit" value="Submit">
 			</form>
 		</td>
 	</tr>
