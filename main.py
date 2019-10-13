@@ -38,6 +38,8 @@ def dir_listing(req_path):
     files = os.listdir(abs_path)
     return render_template('file-list.html', files=files)
 
+@app.router('/images/<path>')
+
 
 @app.route('/', methods=['POST'])
 def upload_file():
@@ -81,6 +83,7 @@ def download_files(path):
     flash('File downloaded')
     return redirect('/')
 
+
 @app.route("/processed/<path>", methods=['GET'])
 def download_processed_files(path):
     if path is None:
@@ -92,7 +95,6 @@ def download_processed_files(path):
 
     flash('File downloaded')
     return redirect('/')
-
 
 
 @app.route('/api-upload', methods=['POST'])
@@ -117,6 +119,7 @@ def api_upload_file():
         resp = jsonify({'message' : 'Allowed file types are txt, pdf, png, jpg, jpeg, gif'})
         resp.status_code = 400
         return resp
+
 
 @app.route("/reset", methods=['POST'])
 def reset_stage():

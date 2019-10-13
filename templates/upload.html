@@ -1,5 +1,7 @@
 <!doctype html>
-<title>Python Flask Multiple Files Upload Example</title>
+<title>Machine Learning with Mario!!</title>
+<img src="{{url_for('static', filename='mario_banner.jpg')}}" />
+
 <h2>Select file(s) to upload</h2>
 <p>
 	{% with messages = get_flashed_messages() %}
@@ -25,7 +27,6 @@
 
 <form method="post" action="/pre-staged" enctype="multipart/form-data">
 		<input type="submit" value="Use Pre-Staged Files">
-	</p>
 </form>
 
 <form method="post" action="/reset" enctype="multipart/form-data">
