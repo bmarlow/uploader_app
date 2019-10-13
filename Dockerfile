@@ -15,12 +15,12 @@ RUN mkdir /root/processed
 RUN chmod 777 /root/processed
 
 #install pre-reqs
-RUN yum -y --disableplugin=subscription-manager install python3 shutil wget pathlib
+RUN yum -y --disableplugin=subscription-manager install python3 shutil wget
 
 
 #install python pre-reqs
 RUN pip3 install --upgrade pip
-RUN pip3 install flask app requests kafka jsonify
+RUN pip3 install flask app requests kafka jsonify pathlib
 
 #get pre-staged files
 RUN mkdir /root/data
