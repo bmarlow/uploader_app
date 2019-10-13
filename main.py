@@ -51,7 +51,7 @@ def upload_file():
             if file and allowed_file(file.filename):
                 filename = secure_filename(file.filename)
                 file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-                enc_message = bytes('The following file was received: ' + file.filename + '', encoding='utf-8')
+                enc_message = bytes('Thae following file was received: ' + file.filename + '', encoding='utf-8')
                 producer.send('file-received', enc_message)
         flash('File(s) successfully uploaded')
         return redirect('/')
@@ -108,7 +108,7 @@ def api_upload_file():
         return resp
     if file and allowed_file(file.filename):
         filename = secure_filename(file.filename)
-        file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+        file.save(os.path.join(app.config['/root/processed'], filename))
         resp = jsonify({'message' : 'File successfully uploaded'})
         resp.status_code = 201
         return resp
