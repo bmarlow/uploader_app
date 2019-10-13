@@ -4,7 +4,7 @@
 <b style="font-family:verdana">The following files have finished processing</b>
 <ul>
     {% for file in files %}
-    <li><a href="{{ file }}" style="font-family:verdana">{{ file }}</a></li>
+    <li><a href="/processed/{{ file }}" style="font-family:verdana">{{ file }}</a></li>
     {% endfor %}
 </ul>
 {% endif %}
