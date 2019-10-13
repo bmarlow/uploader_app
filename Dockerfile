@@ -18,8 +18,6 @@ RUN chmod 777 /root/processed
 
 RUN touch /root/processed/test1.txt
 RUN touch /root/processed/test2.txt
-RUN touch /root/processed/test3.txt
-RUN touch /root/processed/test4.txt
 
 
 #install pre-reqs
