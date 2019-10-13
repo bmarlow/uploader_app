@@ -52,7 +52,7 @@ def upload_file():
                 filename = secure_filename(file.filename)
                 file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
                 enc_message = bytes('The following file was received: ' + file.filename + '', encoding='utf-8')
-                producer.send('file-received', enc_message )
+                producer.send('file-received', enc_message)
         flash('File(s) successfully uploaded')
         return redirect('/')
 
@@ -64,7 +64,6 @@ def stage_files():
         shutil.move("/root/data/y.npy", "/root/uploads/y.npy")
         producer.send('file-received', b'The following file was received: X.npy')
         producer.send('file-received', b'The following file was received: y.npy')
-
         flash('Staging files used')
         return redirect('/')
 
