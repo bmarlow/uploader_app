@@ -3,7 +3,7 @@ import os
 import urllib.request
 import shutil, kafka, logging
 from app import app
-from flask import Flask, flash, request, redirect, render_template, abort, send_file, jsonify, pathlib
+from flask import Flask, flash, request, redirect, render_template, abort, send_file, jsonify
 from werkzeug.utils import secure_filename
 
 ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif', 'npy'])
@@ -124,8 +124,8 @@ def reset():
         try:
             shutil.rmtree("/root/uploads")
             shutil.rmtree("/root/processed")
-            pathlib.Path('/root/data/X.npy').touch()
-            pathlib.Path('/root/data/y.npy').touch()
+            os.open('/root/data/X.npy', 'a').close()
+            os.open('/root/data/y.npy', 'a').close()
         except Exception as e:
             print('error was ' + str(e))
             return redirect('/')
