@@ -119,12 +119,13 @@ def api_upload_file():
 
 
 @app.route("/reset", methods=['POST'])
-def reset_stage():
+def reset():
     if request.method == 'POST':
         try:
             shutil.move("/root/uploads/X.npy", "/root/data/X.npy")
             shutil.move("/root/uploads/y.npy", "/root/data/y.npy")
             shutil.rmtree("/root/uploads")
+            shutil.rmtree("/root/processed")
         except Exception as e:
             return redirect('/')
     flash('staging reset')
