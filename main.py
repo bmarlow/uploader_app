@@ -124,6 +124,7 @@ def reset():
         try:
             shutil.rmtree("/root/uploads")
             shutil.rmtree("/root/processed")
+            shutil.rmtree("/root/results")
         except Exception as e:
             print('error was ' + str(e))
             return redirect('/')
