@@ -3,7 +3,7 @@ import os
 import urllib.request
 import shutil, kafka, logging
 from app import app
-from flask import Flask, flash, request, redirect, render_template, abort, send_file, jsonify
+from flask import Flask, flash, request, redirect, render_template, abort, send_file, jsonify, pathlib
 from werkzeug.utils import secure_filename
 
 ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif', 'npy'])
@@ -122,12 +122,12 @@ def api_upload_file():
 def reset():
     if request.method == 'POST':
         try:
-            shutil.move("/root/uploads/X.npy", "/root/data/X.npy")
-            shutil.move("/root/uploads/y.npy", "/root/data/y.npy")
             shutil.rmtree("/root/uploads")
             shutil.rmtree("/root/processed")
+            pathlib.Path('/root/data/X.npy').touch()
+            pathlib.Path('/root/data/y.npy').touch()
         except Exception as e:
-            print('error was ' + e)
+            print('error was ' + str(e))
             return redirect('/')
     flash('staging reset')
     return redirect('/')
