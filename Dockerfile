@@ -1,4 +1,5 @@
-FROM centos:centos7
+FROM registry.access.redhat.com/ubi7/ubi
+#FROM centos:centos7
 
 #add my files
 ADD app.py /root/
@@ -21,7 +22,7 @@ RUN touch /root/processed/test2.txt
 
 
 #install pre-reqs
-RUN yum -y install python3 shutil wget
+RUN yum -y --disableplugin=subscription-manager install python3 shutil wget
 
 
 #install python pre-reqs
