@@ -1,6 +1,7 @@
 <!doctype html>
+<body style='font-family="sans-serif"'>
 {% if files %}
-<b>The following files have been processed</b>
+<b>The following files have finished processing</b>
 <ul>
     {% for file in files %}
     <li><a href="{{ file }}">{{ file }}</a></li>
