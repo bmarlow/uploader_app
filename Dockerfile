@@ -1,6 +1,7 @@
 FROM registry.access.redhat.com/ubi7/python-36:latest
 
 #add my files
+RUN chmod 777 /root/
 ADD app.py /root/
 ADD main.py /root/
 RUN mkdir /root/templates
