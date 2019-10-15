@@ -1,4 +1,4 @@
-FROM registry.access.redhat.com/ubi7/python-36:latest
+FROM centos:centos7
 
 #add my files
 ADD app.py /tmp/
@@ -15,7 +15,7 @@ RUN mkdir /tmp/processed
 RUN chmod 777 /tmp/processed
 
 #install pre-reqs
-RUN yum -y --disableplugin=subscription-manager install shutil wget
+RUN yum -y install shutil wget python3
 
 
 #install python pre-reqs
