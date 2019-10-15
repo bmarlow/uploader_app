@@ -15,7 +15,7 @@ RUN mkdir /tmp/processed
 RUN chmod 777 /tmp/processed
 
 #install pre-reqs
-RUN yum -y install shutil wget python3
+RUN yum -y install wget python3
 
 
 #install python pre-reqs
@@ -34,4 +34,4 @@ RUN chmod 777 /tmp/data/y.npy
 
 
 WORKDIR /root/
-CMD python3 main.py
+CMD python3 /tmp/main.py
