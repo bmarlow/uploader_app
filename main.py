@@ -108,7 +108,7 @@ def api_upload_file():
         return resp
     if file and allowed_file(file.filename):
         filename = secure_filename(file.filename)
-        file.save(os.path.join('/root/processed', filename))
+        file.save(os.path.join('/tmp/processed', filename))
         resp = jsonify({'message' : 'File successfully uploaded'})
         resp.status_code = 201
         return resp
@@ -122,8 +122,8 @@ def api_upload_file():
 def reset():
     if request.method == 'POST':
         try:
-            subprocess.run('rm /root/uploads/*;, shell=True')
-            subprocess.run('rm /root/processed/*;, shell=True')
+            subprocess.run('rm /tmp/uploads/*;, shell=True')
+            subprocess.run('rm /tmp/processed/*;, shell=True')
         except Exception as e:
             print('error was ' + str(e))
             return redirect('/')
