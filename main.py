@@ -21,7 +21,7 @@ def upload_form():
 @app.route('/file-list', defaults={'req_path': ''})
 @app.route('/file-list/<path:req_path>')
 def dir_listing(req_path):
-    BASE_DIR = '/root/processed'
+    BASE_DIR = '/tmp/processed'
 
     # Joining the base and the requested path
     abs_path = os.path.join(BASE_DIR, req_path)
@@ -60,8 +60,8 @@ def upload_file():
 @app.route('/pre-staged', methods=['POST'])
 def stage_files():
     if request.method == 'POST':
-        shutil.copy("/root/data/X.npy", "/root/uploads/X.npy")
-        shutil.copy("/root/data/y.npy", "/root/uploads/y.npy")
+        shutil.copy("/tmp/data/X.npy", "/tmp/uploads/X.npy")
+        shutil.copy("/tmp/data/y.npy", "/tmp/uploads/y.npy")
         producer.send('file-received', b'The following file was received: X.npy')
         producer.send('file-received', b'The following file was received: y.npy')
         flash('Staging files used')
@@ -73,7 +73,7 @@ def download_files(path):
     if path is None:
         abort(400, 'empty path not allowed')
     try:
-        return send_file('/root/uploads/' + path, as_attachment=True)
+        return send_file('/tmp/uploads/' + path, as_attachment=True)
     except Exception as e:
         abort(404, 'file not found, sorry')
 
@@ -86,7 +86,7 @@ def download_processed_files(path):
     if path is None:
         abort(400, 'empty path not allowed')
     try:
-        return send_file('/root/processed/' + path, as_attachment=True)
+        return send_file('/tmp/processed/' + path, as_attachment=True)
     except Exception as e:
         abort(404, 'file not found, sorry')
 
