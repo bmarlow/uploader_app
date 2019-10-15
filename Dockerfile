@@ -26,10 +26,10 @@ RUN pip3 install flask app requests kafka jsonify
 RUN mkdir /tmp/data
 RUN chmod 777 /tmp/data
 
-RUN wget https://www.dropbox.com/s/x0orqhrfihf6hsz/x.npy?dl=0 -O /root/data/X.npy --quiet
+RUN wget https://www.dropbox.com/s/x0orqhrfihf6hsz/x.npy?dl=0 -O /tmp/data/X.npy --quiet
 RUN chmod 777 /tmp/data/X.npy
 
-RUN wget https://www.dropbox.com/s/w7ckfpjac9ckkuw/y.npy?dl=0 -O /root/data/y.npy --quiet
+RUN wget https://www.dropbox.com/s/w7ckfpjac9ckkuw/y.npy?dl=0 -O /tmp/data/y.npy --quiet
 RUN chmod 777 /tmp/data/y.npy
 
 
