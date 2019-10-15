@@ -15,7 +15,7 @@ RUN mkdir /tmp/processed
 RUN chmod 777 /tmp/processed
 
 #install pre-reqs
-RUN sudo yum -y --disableplugin=subscription-manager install shutil wget
+RUN yum -y --disableplugin=subscription-manager install shutil wget
 
 
 #install python pre-reqs
