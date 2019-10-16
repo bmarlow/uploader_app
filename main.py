@@ -65,8 +65,8 @@ def stage_files():
     if request.method == 'POST':
         shutil.copy("/tmp/data/X.npy", "/tmp/uploads/X.npy")
         shutil.copy("/tmp/data/y.npy", "/tmp/uploads/y.npy")
-        producer.send('file-received', b'The following file was received: X.npy')
-        producer.send('file-received', b'The following file was received: y.npy')
+        producer.send('file-received', b'DROPOFF POD (AMQ): The following file was received: X.npy')
+        producer.send('file-received', b'DROPOFF POD (AMQ): The following file was received: y.npy')
         flash('Staging files used')
         return redirect('/')
 
