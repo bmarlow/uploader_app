@@ -53,6 +53,9 @@ def upload_file():
                 file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
                 enc_message = bytes('The following file was received: ' + file.filename + '', encoding='utf-8')
                 producer.send('file-received', enc_message)
+            else:
+                return render_template('naughty.html')
+            
         flash('File(s) successfully uploaded')
         return redirect('/')
 
