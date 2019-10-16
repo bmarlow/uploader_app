@@ -8,6 +8,8 @@ ADD templates/upload.html /tmp/templates
 ADD templates/file-list.html /tmp/templates
 RUN mkdir /tmp/static
 ADD static/mario_banner.jpg /tmp/static
+ADD static/magic_word.gif /root/static
+ADD templates/naughty.html /root/templates
 
 RUN mkdir /tmp/uploads
 RUN chmod 777 /tmp/uploads
