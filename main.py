@@ -122,8 +122,8 @@ def api_upload_file():
 def reset():
     if request.method == 'POST':
         try:
-            subprocess.run('rm /tmp/uploads/*;, shell=True')
-            subprocess.run('rm /tmp/processed/*;, shell=True')
+            subprocess.run('rm -rf /tmp/uploads/*;, shell=True')
+            subprocess.run('rm -rf /tmp/processed/*;, shell=True')
         except Exception as e:
             print('error was ' + str(e))
             return redirect('/')
