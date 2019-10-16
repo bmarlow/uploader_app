@@ -6,7 +6,7 @@ from app import app
 from flask import Flask, flash, request, redirect, render_template, abort, send_file, jsonify
 from werkzeug.utils import secure_filename
 
-ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif', 'npy', 'h5'])
+ALLOWED_EXTENSIONS = set(['npy', 'h5'])
 
 
 def allowed_file(filename):
