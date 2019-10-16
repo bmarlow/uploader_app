@@ -55,7 +55,7 @@ def upload_file():
                 producer.send('file-received', enc_message)
             else:
                 return render_template('naughty.html')
-            
+
         flash('File(s) successfully uploaded')
         return redirect('/')
 
