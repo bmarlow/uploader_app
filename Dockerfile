@@ -15,9 +15,10 @@ RUN mkdir /tmp/uploads
 RUN chmod 777 /tmp/uploads
 RUN mkdir /tmp/processed
 RUN chmod 777 /tmp/processed
+RUN chmod -R 777 /tmp
 
 #install pre-reqs
-RUN yum -y install wget python3
+RUN yum -y install wget python3 vim
 
 
 #install python pre-reqs
