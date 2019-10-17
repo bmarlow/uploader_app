@@ -3,12 +3,22 @@
 	<title>Machine Learning with Mario!!</title>
 	<style>
 		.autosize { width: 100%; height: auto; }
+		.centered { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);}
+		.container { position: relative; text-align: center; font-family:verdana; color: red; font-size: 5vw; }
+
 	</style>
 </head>
 	<body>
-		<img src="{{url_for('static', filename='mario_banner.jpg')}}" class="autosize" />
+	<div class="container">
+		<b>Machine Learning with Mario!</b>
+	  <img src="{{url_for('static', filename='mario_banner.jpg')}}" class="autosize" />
+	</div>
 
-		<h2 style="font-family:verdana">Select training file(s) to upload</h2>
+
+
+
+
+		<h2 style="font-family:verdana">Select training files to upload</h2>
 		<table>
 
 			<tr>
